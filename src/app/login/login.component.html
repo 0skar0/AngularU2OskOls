@@ -1,0 +1,23 @@
+
+<div class="loginForm" *ngIf="!userName else showLogOut">
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Please login</label>
+      <input type="text" class="form-control" [(ngModel)]="loggedUser" placeholder="Username">
+    </div>
+
+    <button type="button" class="btn btn-primary" routerLink="/dashboard" (click)="checkUser()">Login</button>
+
+</div>
+
+<ng-template #showLogOut>
+<div class="loginForm" >
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">You're already signed in.</label>
+    </div>
+
+    <button type="button" class="btn btn-primary"  (click)="logout()" routerLink="/">Logout</button>
+
+</div>
+</ng-template>
