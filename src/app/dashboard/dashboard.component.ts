@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
 
 
   constructor(private authService: AuthServiceService) {
-    this.loggedUser = authService.loggedUser;
+    this.loggedUser = authService.checkIfLoggedIn();
 
 
   }

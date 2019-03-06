@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 
+
 @Injectable({
   providedIn: 'root'
 })
-export class AuthServiceService {
+export class AuthServiceService   {
 
   public loggedUser: string;
 
@@ -14,7 +15,6 @@ export class AuthServiceService {
   public login(name: string): void {
     localStorage.setItem('user', name);
     this.loggedUser = name;
-
   }
 
   public logout():void {
@@ -25,4 +25,6 @@ export class AuthServiceService {
   public checkIfLoggedIn() {
     return localStorage.getItem('user')
   }
+
+
 }

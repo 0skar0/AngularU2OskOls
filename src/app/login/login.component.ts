@@ -20,8 +20,15 @@ export class LoginComponent implements OnInit {
 
   }
 
+  // kontrollerar så att användaren skrivit in minst 10 characters och minst en siffra. om search-metoden inte hittar en siffra får den ett värde på -1. Om kraven uppfylls skickas loggedUser till authService.
   checkUser() {
-    this.authService.login(this.loggedUser);
+    let searchForNumber = this.loggedUser.search(/\d+/);
+    if(this.loggedUser.length >= 10 && searchForNumber >= 0) {
+      this.authService.login(this.loggedUser);
+    } else {
+      alert('Your login can\'t be under 10 characters long and must contatin at least one number!');
+    }
+
 
   }
 
