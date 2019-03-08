@@ -1,15 +1,13 @@
-
+<!-- Om man inte är inloggad visas detta -->
 <div class="loginForm" *ngIf="!userName else showLogOut">
-
     <div class="form-group">
       <label for="exampleInputPassword1">Please login</label>
       <input type="text" class="form-control" [(ngModel)]="loggedUser" placeholder="Username">
     </div>
-
     <button type="button" class="btn btn-primary" routerLink="/dashboard" (click)="checkUser()">Login</button>
-
 </div>
 
+<!-- Om man är inloggad visas detta -->
 <ng-template #showLogOut>
 <div class="loginForm" >
 

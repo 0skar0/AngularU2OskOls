@@ -4,27 +4,28 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthServiceService   {
+
+// Sköter logik för ut- och inloggning
+export class AuthServiceService {
 
   public loggedUser: string;
 
-  constructor() {
+  constructor() {}
 
-   }
-
+  // tilldelar loggedUser ett värde från login-component i localStorage
   public login(name: string): void {
     localStorage.setItem('user', name);
     this.loggedUser = name;
   }
 
-  public logout():void {
+  // rensar localStorage vit utloggning och sätter loggedUser till undefined
+  public logout(): void {
     localStorage.clear();
     this.loggedUser = undefined;
   }
 
-  public checkIfLoggedIn() {
+  // kontrollerar om man är inloggad eller ej genom att hämta värdet av user i localStorage.
+  public checkIfLoggedIn(): string {
     return localStorage.getItem('user')
   }
-
-
 }

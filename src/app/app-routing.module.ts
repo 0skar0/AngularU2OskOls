@@ -8,7 +8,7 @@ import { SingleUserComponent } from './single-user/single-user.component';
 import { RouteGuardService as Routegard
 } from './route-guard.service';
 
-
+// Paths till olika länkar. Samt Routegard till min dashboard
 const routes: Routes = [
   { path: '', component: LoginComponent},
   { path: 'login', component: LoginComponent },

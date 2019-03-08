@@ -10,6 +10,7 @@ export class SingleUserComponent implements OnInit {
 
   user: string;
 
+  // Ger oss tillträde till params parametrar via subscribe.
   constructor(private route: ActivatedRoute) {
     this.route.params.subscribe(params => {
       this.user = params.id;

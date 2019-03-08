@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthServiceService } from '../auth-service.service'
 
 @Component({
@@ -7,20 +7,16 @@ import { AuthServiceService } from '../auth-service.service'
   styleUrls: ['./dashboard.component.css']
 })
 
-//Sparar en egenskap som en array med alla users som skickas in
-export class DashboardComponent implements OnInit {
+//Sparar en egenskap som en array med alla users som skickas in.
+export class DashboardComponent {
   userList: string[] = ["John Deere"];
   loggedUser: string;
 
-
+  // hämtar värdet av loggedUser i authService
   constructor(private authService: AuthServiceService) {
     this.loggedUser = authService.checkIfLoggedIn();
-
-
   }
 
-  ngOnInit() {
-  }
   //skickar in en user från input in i userList
   onAddUser(user:string) {
     this.userList.push(user);
