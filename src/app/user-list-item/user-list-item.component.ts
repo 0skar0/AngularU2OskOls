@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-user-list-item',
@@ -6,15 +6,14 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./user-list-item.component.css']
 })
 
-// tar emot inputs från users-list 
-export class UserListItemComponent implements OnInit {
+// tar emot inputs från users-list
+export class UserListItemComponent  {
 
   @Input() users: string[];
   @Input() textColor: boolean;
   constructor() { }
 
-  ngOnInit() {
-  }
+
 
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 
 // Visar vilken user användaren klickat på från user-list-item.
-export class SingleUserComponent implements OnInit {
+export class SingleUserComponent  {
 
   user: string;
 
@@ -17,9 +17,6 @@ export class SingleUserComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.user = params.id;
     })
-  }
-
-  ngOnInit() {
   }
 
 }
