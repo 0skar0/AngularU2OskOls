@@ -6,6 +6,8 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './single-user.component.html',
   styleUrls: ['./single-user.component.css']
 })
+
+// Visar vilken user användaren klickat på från user-list-item.
 export class SingleUserComponent implements OnInit {
 
   user: string;
